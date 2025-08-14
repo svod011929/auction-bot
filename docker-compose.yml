@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: user_password
+      POSTGRES_DB: postrges
+    ports:
+      - "5432:5432"
+    networks:
+      - bot_network
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  bot:
+    build: .
+    container_name: telegram_auction_bot
+    restart: always
+    environment:
+      BOT_TOKEN : #YOUR BOT TOKEN
+      DB_URL : #YOUR DATABASE URL
+      PAYMENTS_TOKEN : #YOUR PAYMENTS TOKEN
+      CHANNEL_ID : #YOUR  CHANNEL ID
+    depends_on:
+      - db
+    networks:
+      - bot_network
+    volumes:
+      - .:/app
+
+networks:
+  bot_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
