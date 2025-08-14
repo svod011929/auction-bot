@@ -1,89 +1,77 @@
-# Telegram Auction Bot 🎁
+# Telegram Auction Bot 🎁 (На стадии доработки)
 
-A Telegram bot for conducting auctions, specializing in the sale of Telegram gifts and other exclusive items between users.
+Телеграм-бот для проведения аукционов, специализирующийся на продаже Telegram-подарков и других эксклюзивных предметов между пользователями.
 
-## 📋 Project Description
+## 📋 Описание проекта
 
-Telegram Auction Bot is a platform that allows users to create auctions and list items for sale. The main focus of the bot is on Telegram gifts (stickers, premium subscriptions, and other digital goods from the Telegram platform), but it can be used for other items as well.
+Telegram Auction Bot — это платформа, позволяющая пользователям создавать аукционы и выставлять предметы на продажу. Основной фокус бота — Telegram-подарки (стикеры, премиум-подписки и другие цифровые товары платформы Telegram), но его также можно использовать для других предметов.
 
-### Main Features:
-- Creating auctions with various settings (start/end time, starting price)
-- Listing lots
-- Bidding system with notifications
+### Основные возможности:
+- Создание аукционов с различными настройками (время начала/окончания, стартовая цена)
+- Размещение лотов
+- Система ставок с уведомлениями
 
-## 🛠️ Technologies
+## 🛠️ Технологии
 
 - **Python 3.9+**
-- **aiogram 3.x** - asynchronous framework for Telegram Bot API
-- **SQLAlchemy 2.0** - ORM for database operations
-- **asyncpg** - asynchronous PostgreSQL driver
-- **PostgreSQL** - database management system
-- **Poetry** - dependency and virtual environment management
+- **aiogram 3.x** — асинхронный фреймворк для Telegram Bot API
+- **SQLAlchemy 2.0** — ORM для работы с базами данных
+- **asyncpg** — асинхронный драйвер PostgreSQL
+- **PostgreSQL** — система управления базами данных
+- **Poetry** — управление зависимостями и виртуальными окружениями
 
-## 📦 Installation and Launch
+## 📦 Установка и запуск
 
-### Prerequisites
+### Предварительные требования
 
-- Python 3.9 or higher
+- Python 3.9 или новее
 - PostgreSQL
 - Poetry
 
-### Installation
+### Установка
 
-1. Clone the repository:
+1. Клонируйте репозиторий:
 ```bash
 git clone https://github.com/yourusername/auction-bot.git
 cd auction-bot
 ```
 
-2. Install dependencies using Poetry:
+2. Установите зависимости через Poetry:
 ```bash
 poetry install
 ```
 
-3. Add .env file with values from config.py:
+3. Создайте файл .env со значениями из config.py:
 ```bash
 touch .env 
 ```
 
-### Launch
+### Запуск
 
 ```bash
 poetry run python -m app.bot
 ```
 
-## 🧩 Project Structure
+## 🧩 Структура проекта
 
 ```
 auction-bot/
 ├── app/
 │   ├── admin/
-│   │   ├── handlers.py     # Admin command handlers
-│   │   └── keyboards.py    # Admin keyboards
+│   │   ├── handlers.py     # Обработчики команд администратора
+│   │   └── keyboards.py    # Клавиатуры администратора
 │   ├── db/
-│   │   ├── engine.py       # Database connection setup
-│   │   ├── models.py       # Data models
-│   │   └── requests.py     # Database operation functions
+│   │   ├── engine.py       # Настройка подключения к БД
+│   │   ├── models.py       # Модели данных
+│   │   └── requests.py     # Функции для работы с БД
 │   ├── user/
-│   │   ├── handlers.py     # User command handlers
-│   │   ├── keyboards.py    # User keyboards
-│   │   ├── filters.py      # Message filters
-│   │   └── middlewares.py  # Middleware handlers
-│   ├── bot.py              # Main bot file
-│   └── config.py           # Bot configuration
-├── config.py               # Configuration 
-├── pyproject.toml          # Poetry configuration
-└── poetry.lock             # Project dependencies
+│   │   ├── handlers.py     # Обработчики команд пользователя
+│   │   ├── keyboards.py    # Пользовательские клавиатуры
+│   │   ├── filters.py      # Фильтры сообщений
+│   │   └── middlewares.py  # Промежуточное ПО (middleware)
+│   ├── bot.py              # Основной файл бота
+│   └── config.py           # Конфигурация бота
+├── config.py               # Конфигурация 
+├── pyproject.toml          # Конфигурация Poetry
+└── poetry.lock             # Зависимости проекта
 ```
-
-## 📄 License
-
-MIT License
-
-## 👨‍💻 Authors
-
-### - [qellyka](https://github.com/qellyka)
-
----
-
-If you have questions or suggestions, please create an Issue or contact us via Telegram: [qellyka](https://t.me/qellyka)
